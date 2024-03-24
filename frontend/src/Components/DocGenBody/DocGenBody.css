@@ -1,0 +1,18 @@
+.d-container {
+    padding: 4em 2em 2em 2em;
+}
+
+.d-title{
+    color: #7A1010;
+    font-size: 1.8em;
+    font-weight: 600;
+    margin-left: 4em;
+}
+
+.d-card-list{
+    padding: 4em 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3em;
+    justify-content: center;
+}

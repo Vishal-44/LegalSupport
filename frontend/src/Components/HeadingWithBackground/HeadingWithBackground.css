@@ -1,0 +1,16 @@
+.f-background {
+    background-image: url('../../assets/back-feature.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: .8em 0;
+    font-size : 6em;
+    font-weight : 700;
+    color : rgb(255, 255, 255);
+    filter: saturate(5px);
+  }
+  
+  .f-heading{
+    text-shadow: black 0 0 16px;
+  }
+  
