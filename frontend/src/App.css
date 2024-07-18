@@ -1,6 +1,214 @@
 #root {
   width: 100%;
+  font-family: "Open sans", sans-serif;
 }
+
+.header {
+  padding-inline: 40px;
+  background-color: #a3b18a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.legaldocs {
+  font-family: "Playwrite HU", cursive; 
+  font-weight: 900;
+  color: #3a5a40;
+}
+
+.nav-menu {
+  display: flex;
+  gap : 20px;
+  color:#dad7cd;
+  cursor: pointer;
+}
+
+.secondary-button {
+  width: 104px;
+  text-align: center;
+  background-color: #a3b18a ;
+  color : #3a5a40;
+  border: 1px solid #3a5a40;
+  border-radius: 10px;
+  font-family: "Open sans", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 4px 8px ;
+}
+
+.secondary-button:hover {
+  text-align: center;
+  background-color:  #3a5a40 ;
+  color: #a3b18a;
+  border: 1px solid #3a5a40;
+  border-radius: 10px;
+  font-family: "Open sans", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 4px 8px ;
+}
+
+.tagline-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-inline: 240px;
+  gap : 40px;
+  padding-top: 120px;
+  padding-bottom: 120px;
+  background-color: #a3b18a;
+  color:#3a5a40;
+}
+
+.tagline {
+  font-family: "Playfair Display", serif;
+  font-size: 48px;
+  text-align: center;
+  font-weight: 900;
+  margin: 0;
+}
+
+.sub-tagline {
+  font-family: "Playwrite HU", cursive;
+  font-size: 18px;
+  text-align: center;
+  margin: 0;
+}
+
+.cta-button{
+  font-size: 18px;
+  font-family: "Open sans", sans-serif;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.f-section {
+  background-color: #3a5a40;
+  padding : 60px 240px;
+  display: flex;
+  gap : 160px;
+  color: #dad7cd;
+}
+
+.f-image {
+  width: 25rem;
+  height : auto;
+  opacity: 70%;
+  border-radius: 8px;
+}
+
+.f-title {
+  font-size: 32px;
+  font-weight: 900;
+  font-family: "Playfair Display", serif;
+}
+
+.f-desc {
+  font-size: 18px;
+  font-family: "Playwrite HU", cursive;
+}
+
+.input-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: start;
+}
+
+.label {
+  padding-inline: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #3a5a40;
+}
+
+.input {
+  width: 352px;
+  height: 40px;
+  border : 1px solid #3a5a40;
+  border-radius: 6px;
+  color: #000000;
+  padding: 0 4px;
+}
+
+.input:focus {
+  outline: none;
+  border : 2px solid #3a5a40;
+  border-radius: 6px;
+}
+
+
+.form {
+  width: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.input-container{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.button-container{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-button {
+height: 40px;
+border: 1px solid #3a5a40;
+border-radius: 6px;
+background-color: #3a5a40;
+font-size: 18px;
+color: #ffffff;
+}
+
+.form-secondary-button{
+  height: 40px;
+  border: 1px solid #3a5a40;
+  border-radius: 6px;
+  background: transparent;
+  font-size: 18px;
+  color: #3a5a40;
+}
+
+.left-body-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+
+.logo{
+padding-inline-start: 40px;
+}
+
+.right{
+  width: 40%;
+  background-image: url(./assets/DGen.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 80%;
+}
+
+.left {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.login-container{
+  display: flex;
+  height: 100vh;
+}
+
 
 
 
