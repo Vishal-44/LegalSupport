@@ -1,6 +1,7 @@
 import React, { useState }  from 'react'
 import InputField from '../Components/InputField'
 import { useNavigate } from 'react-router-dom'
+import { validateRegisterDetails } from '../utils/Validator'
 
 const Register = () => {
   
@@ -11,7 +12,14 @@ const Register = () => {
 
   const handleCreateAccount = (e)=> {
     e.preventDefault();
-    console.log("login clicked ",username,"\n",password,"\n",name )
+    const validateResult = validateRegisterDetails(name, username, password)
+    console.log(validateResult)
+
+    if(validateResult.status)
+    {
+      const data = {'name': name, 'username': username, 'password': password}
+      console.log("register clicked ",data)
+    }
   }
 
   const handleLogin = (e)=> {
@@ -34,7 +42,7 @@ const Register = () => {
               </div>
               <div className='button-container'>
                 <button className='form-button' onClick={handleCreateAccount}>Create your account.</button>
-                <button className='form-secondary-button' onClick={handleLogin}>Already have an acccount ? Log in.</button>
+                <button className='form-secondary-button' onClick={handleLogin}>Already have an account ? Log in.</button>
               </div>
             </form>
         </div>

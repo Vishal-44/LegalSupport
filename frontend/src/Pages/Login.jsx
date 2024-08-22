@@ -1,15 +1,22 @@
 import React, { useState } from 'react'
 import InputField from '../Components/InputField'
 import { useNavigate } from 'react-router-dom'
+import { validateLoginDetails } from '../utils/Validator'
 
 const Login = () => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const navigate = useNavigate()
 
-  const handleLogin = (e)=> {
+  const handleLogin = async (e)=> {
     e.preventDefault();
-    console.log("login clicked ",username,"\n",password )
+    const validateResult = validateLoginDetails(username,password)
+
+    if(validateResult.status)
+    {
+      const data = {'username': username, 'password': password}
+      console.log("login clicked ",username,"\n",password )
+    }
   }
 
   const handleCreateAccount = (e)=> {
