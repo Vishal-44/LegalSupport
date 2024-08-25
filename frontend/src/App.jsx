@@ -7,6 +7,7 @@ import Register from './Pages/Register'
 import Login from './Pages/Login'
 import DocumentGeneration from './Pages/DocumentGeneration';
 import NDA from './Pages/DPages/NDA';
+import PA from './Pages/DPages/PA';
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
       <Route path='/login' exact element={<Login/>}/>
       <Route path='/document-generation' exact element={<DocumentGeneration/>}/>
       <Route path='/NDA' exact element={<NDA/>}/>
+      <Route path='/PA' exact element={<PA/>}/>
     </Routes>
     </BrowserRouter>
     </>

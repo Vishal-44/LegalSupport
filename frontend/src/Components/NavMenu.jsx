@@ -33,6 +33,7 @@ const NavMenu = () => {
     console.log(res)
     if(res.success) {
       setUserDetails((prevState)=>({...prevState, status : false, usename : ""}))
+      navigate('/')
     }
   }
 
