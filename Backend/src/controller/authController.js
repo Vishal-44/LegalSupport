@@ -5,16 +5,16 @@ const bcrypt = require('bcrypt')
 exports.register = async (req, res, next) => {
   console.log(req.body);
   try {
-    const { name, userName, password } = req.body;
+    const { name, username, password } = req.body;
 
-    if (!(name && userName && password)) {
+    if (!(name && username && password)) {
       return res.status(400).json({
         message: 'Insufficient data.',
         success: false,
       });
     }
 
-    const existingUser = await User.findOne({ username: userName });
+    const existingUser = await User.findOne({username});
     if (existingUser) {
       return res.status(400).json({
         message: 'User already exists with this credentials.',
@@ -26,7 +26,7 @@ exports.register = async (req, res, next) => {
 
     const user = new User({
       name,
-      username: userName,
+      username,
       password: hashedPassword,
     });
 
@@ -52,21 +52,21 @@ exports.register = async (req, res, next) => {
 exports.login  = async (req, res, next) => {
     console.log(req.body)
     try {
-        const {userName, password} = req.body
-        if(!(userName && password))
+        const {username, password} = req.body
+        if(!(username && password))
         {
             return res.status(400).json({success : false, message : "Insufficient Data."})
         }
-        let user = await User.findOne({username : userName})
+        let user = await User.findOne({username})
 
         if(!user) {
             return res.status(400).json({
-                message : 'Incorrect credentials.',
+                message : 'User not found.',
                 success : false
             })
         }
 
-        const isPasswordMatch = user.comparePassword(password, user.password)
+        const isPasswordMatch = await user.comparePassword(password, user.password)
         if(!isPasswordMatch) { 
             return res.status(400).json({
             message : 'Incorrect credentials.',
@@ -89,4 +89,15 @@ exports.login  = async (req, res, next) => {
     catch(error) {
         console.log(error)
     }
+}
+
+
+exports.logout = async(req, res, next)=>{
+try {
+  res.clearCookie('jwtToken')
+  return res.status(200).json({success : true, message : 'Cookie cleared'})
+} catch (error) {
+  console.log(error)
+  return res.status(400).json({success : false, message : 'Internal error.'})
+}
 }

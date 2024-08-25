@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import InputField from '../Components/InputField'
 import { useNavigate } from 'react-router-dom'
 import { validateLoginDetails } from '../utils/Validator'
+import { login } from '../utils/ApiServices'
+import { toast } from 'react-toastify'
 
 const Login = () => {
   const [username, setUsername] = useState('')
@@ -15,7 +17,13 @@ const Login = () => {
     if(validateResult.status)
     {
       const data = {'username': username, 'password': password}
-      console.log("login clicked ",username,"\n",password )
+      const res = await login(data)
+      if(res.success) {
+        navigate('/')
+      }
+      else {
+        toast.error(res.message);
+      }
     }
   }
 

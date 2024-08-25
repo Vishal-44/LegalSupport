@@ -1,6 +1,7 @@
 // imports
 const express = require('express')
 const authRoutes = require('./src/routes/authRoutes')
+const userRoutes = require('./src/routes/userRoutes')
 const cors = require('cors')
 const {log} = require('./src/middleware/log')
 const cookieParser = require('cookie-parser')
@@ -22,7 +23,7 @@ const corsOption = {
 app.use(express.json())
 app.use(express.urlencoded({extended : true}))
 app.use(cookieParser())
-app.use(cors())
+app.use(cors(corsOption))
 app.use(log)
 
 
@@ -34,6 +35,7 @@ connectDatabase();
 //Routes
 // -----------------------------------------------------------------------------------------------------------------
 app.use('/auth', authRoutes)
+app.use('/user', userRoutes)
 
 app.get('/', (req, res)=> res.sendStatus(200))
 

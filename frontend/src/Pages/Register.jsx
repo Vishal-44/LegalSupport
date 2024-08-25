@@ -1,7 +1,8 @@
 import React, { useState }  from 'react'
 import InputField from '../Components/InputField'
-import { useNavigate } from 'react-router-dom'
+import { json, useNavigate } from 'react-router-dom'
 import { validateRegisterDetails } from '../utils/Validator'
+import { register } from '../utils/ApiServices'
 
 const Register = () => {
   
@@ -10,15 +11,15 @@ const Register = () => {
   const [password, setPassword] = useState('')
   const navigate = useNavigate()
 
-  const handleCreateAccount = (e)=> {
+  const handleCreateAccount = async(e)=> {
     e.preventDefault();
     const validateResult = validateRegisterDetails(name, username, password)
     console.log(validateResult)
 
     if(validateResult.status)
     {
-      const data = {'name': name, 'username': username, 'password': password}
-      console.log("register clicked ",data)
+      const data = {name ,username ,password}
+      navigate('/')
     }
   }
 
