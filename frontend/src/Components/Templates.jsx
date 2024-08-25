@@ -2,7 +2,7 @@ import React from 'react'
 import { Document, Page, Text, View, StyleSheet} from '@react-pdf/renderer';
 
 const date = new Date()
-const dateToday = date.getDate() + "/" + date.getMonth() + "/" + date.getFullYear()
+const dateToday = `${date.getDate()}/${date.getMonth()} / ${date.getFullYear()}`
 const styles = StyleSheet.create({
   page: {
     margin : 10,
