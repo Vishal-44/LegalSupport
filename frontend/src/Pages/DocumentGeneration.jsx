@@ -12,11 +12,11 @@ const DocumentGeneration = () => {
 
     const documents = [
         {img : nda, title : 'Non Discloser Agreement', subtitle : 'Protect Your Confidential Information: Ensure Privacy and Trust in Every Deal.',url : '/NDA'},
-        {img : ra, title : 'Referral Agreement', subtitle : 'Secure Your Referrals: Define Terms and Commissions with Confidence.', url : ''},
+        {img : ra, title : 'Referral Agreement', subtitle : 'Secure Your Referrals: Define Terms and Commissions with Confidence.', url : '/RFA'},
         {img : pma, title : 'Property Mng. Agreement', subtitle : 'Manage Your Property Efficiently: Outline Duties and Responsibilities Clearly.', url : ''},
         {img : pa, title : 'Payment Agreement', subtitle : 'Manage Your Property Efficiently: Outline Duties and Responsibilities Clearly.', url : '/PA'},
-        {img : rna, title : 'Rental Agreement', subtitle : 'Secure Your Referrals: Define Terms and Commissions with Confidence.', url : ''},
-        {img : sa, title : 'Sublease Agreement', subtitle : 'Secure Your Referrals: Define Terms and Commissions with Confidence.', url : ''}
+        {img : rna, title : 'Rental Agreement', subtitle : 'Secure Your Referrals: Define Terms and Commissions with Confidence.', url : '/RA'},
+        {img : sa, title : 'Sublease Agreement', subtitle : 'Secure Your Referrals: Define Terms and Commissions with Confidence.', url : '/SBA'}
     ]
 
     scrollTo(top)

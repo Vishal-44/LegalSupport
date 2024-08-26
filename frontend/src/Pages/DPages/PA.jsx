@@ -6,13 +6,13 @@ const PA = () => {
 
     const [data, setData] = useState({
         'date' : '',
-        'disclosing-party' : '',
-        'disclosing-party-address' : '',
-        'receiving-party' : '',
-        'receiving-party-address' : '',
-        'governing-law' : '',
-        'sign1' : '',
-        'sign2':''
+        'debtor-name' : '',
+        'debtor-address' : '',
+        'creditor-name' : '',
+        'creditor-address' : '',
+        'amount':'',
+        'payment-details' : '',
+        'governing-law':''
     })
 
     const handleDataChange = (e) => {
@@ -35,47 +35,48 @@ const PA = () => {
             value={data['date']} 
             onChange={handleDataChange}/>
             
-            <p className = 'question'>2. What is the name of the party disclosing confidential information?</p>
+            <p className = 'question'>2. What is the name of the Debtor?</p>
             <input type="text" 
-            name = 'disclosing-party' 
-            value={data['disclosing-party']} 
+            name = 'debtor-name' 
+            value={data['debtor-name']} 
             onChange={handleDataChange}/>
 
-            <p className = 'question'>3. What is the address of the party disclosing confidential information?</p>
+            <p className = 'question'>3. What is the address of the Debtor?</p>
             <input type="text" 
-            name = 'disclosing-party-address' 
-            value={data['disclosing-party-address']} 
+            name = 'debtor-address' 
+            value={data['debtor-address']} 
             onChange={handleDataChange}/>
 
-            <p className = 'question'>4. What is the name of the party receiving confidential information?</p>
+            <p className = 'question'>4. What is the name of the Creditor?</p>
             <input type="text" 
-            name = 'receiving-party' 
-            value={data['receiving-party']}
+            name = 'creditor-name' 
+            value={data['creditor-name']}
             onChange={handleDataChange}/>
 
-            <p className = 'question'>5. What is the address of the party receiving confidential information?</p>
+            <p className = 'question'>5. What is the address of the Creditor?</p>
             <input type="text" 
-            name = 'receiving-party-address' 
-            value={data['receiving-party-address']}
+            name = 'creditor-address' 
+            value={data['creditor-address']}
+            onChange={handleDataChange}/>
+            <p className = 'question'>6. What is the specific amount of money that the Debtor agrees to pay to the Creditor?</p>
+            <input type="text" 
+            name = 'amount' 
+            value={data['amount']}
             onChange={handleDataChange}/>
 
-            <p className = 'question'>6. Under the laws of which state or jurisdiction will this agreement be governed?</p>
+            <p className = 'question'>7.What is the structure of the payment plan, including due dates, frequency (e.g., monthly, quarterly), and amounts to be paid in each installment?</p>
+            <input type="text" 
+            name = 'payment-details' 
+            value={data['payment-details']}
+            onChange={handleDataChange}/>
+
+            <p className = 'question'>8. Under the laws of which state or jurisdiction will this agreement be governed?</p>
             <input type="text" 
             name = 'governing-law' 
             value={data['governing-law']}
             onChange={handleDataChange}/>
 
-            <p className = 'question'>7. Who will be signing this agreement on behalf of the Disclosing Party?</p>
-            <input type="text" 
-            name = 'sign1' 
-            value={data['sign1']}
-            onChange={handleDataChange}/>
-
-            <p className = 'question'>8. Who will be signing this agreement on behalf of the Receiving Party?</p>
-            <input type="text" 
-            name = 'sign2' 
-            value={data['sign2']}
-            onChange={handleDataChange}/>
+            
             <br />
             <br />
 

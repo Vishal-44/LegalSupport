@@ -8,6 +8,9 @@ import Login from './Pages/Login'
 import DocumentGeneration from './Pages/DocumentGeneration';
 import NDA from './Pages/DPages/NDA';
 import PA from './Pages/DPages/PA';
+import RFA from './Pages/DPages/RFA';
+import RA from './Pages/DPages/RA';
+import SBA from './Pages/DPages/SBA';
 
 
 function App() {
@@ -35,6 +38,9 @@ function App() {
       <Route path='/document-generation' exact element={<DocumentGeneration/>}/>
       <Route path='/NDA' exact element={<NDA/>}/>
       <Route path='/PA' exact element={<PA/>}/>
+      <Route path='/RFA' exact element={<RFA/>}/>
+      <Route path='/RA' exact element={<RA/>}/>
+      <Route path='/SBA' exact element={<SBA/>}/>
     </Routes>
     </BrowserRouter>
     </>
