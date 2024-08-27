@@ -11,6 +11,7 @@ import PA from './Pages/DPages/PA';
 import RFA from './Pages/DPages/RFA';
 import RA from './Pages/DPages/RA';
 import SBA from './Pages/DPages/SBA';
+import DocumentSimplification from './Pages/DocumentSimplification';
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
       <Route path='/register' exact element={<Register/>}/>
       <Route path='/login' exact element={<Login/>}/>
       <Route path='/document-generation' exact element={<DocumentGeneration/>}/>
+      <Route path='/document-simplification' exact element={<DocumentSimplification/>}/>
       <Route path='/NDA' exact element={<NDA/>}/>
       <Route path='/PA' exact element={<PA/>}/>
       <Route path='/RFA' exact element={<RFA/>}/>

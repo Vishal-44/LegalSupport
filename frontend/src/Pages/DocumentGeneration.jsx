@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect} from 'react'
 import Header from '../Components/Header'
 import nda from '../assets/non-disclosure-agreement.jpg'
 import pa from '../assets/payment-agreement.jpg'
@@ -7,8 +7,13 @@ import ra from '../assets/referral-agreement.jpg'
 import rna from '../assets/rental-agreement.jpg'
 import sa from '../assets/sublease-agreement.jpg'
 import DocCard from '../Components/DocCard'
+import { useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
+import { getUserDetails } from '../utils/ApiServices'
 
 const DocumentGeneration = () => {
+    scrollTo(top)
+    const navigate = useNavigate()
 
     const documents = [
         {img : nda, title : 'Non Discloser Agreement', subtitle : 'Protect Your Confidential Information: Ensure Privacy and Trust in Every Deal.',url : '/NDA'},
@@ -19,7 +24,16 @@ const DocumentGeneration = () => {
         {img : sa, title : 'Sublease Agreement', subtitle : 'Secure Your Referrals: Define Terms and Commissions with Confidence.', url : '/SBA'}
     ]
 
-    scrollTo(top)
+    useEffect(()=>{
+        const fechData = async () => {
+        const res = await getUserDetails()
+        if (!res.success){
+            toast.warning("Log In or Register to generate documents.")
+            navigate('/')
+        }
+      }
+      fechData()
+    },[])
 
   return (
     <>

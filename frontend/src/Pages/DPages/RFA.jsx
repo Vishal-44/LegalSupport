@@ -1,9 +1,25 @@
-import React,{useState} from 'react'
+import React,{useEffect, useState} from 'react'
 import Header from '../../Components/Header'
 import { ReferralAgreement } from '../../Components/Templates'
 import { PDFDownloadLink } from '@react-pdf/renderer'
+import { getUserDetails } from '../../utils/ApiServices'
+import { useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
 
 const RFA = () => {
+
+    const navigate = useNavigate()
+
+    useEffect(()=>{
+        const fechData = async () => {
+        const res = await getUserDetails()
+        if (!res.success){
+            toast.warning("Log In or Register to generate documents.")
+            navigate('/')
+        }
+      }
+      fechData()
+    },[])
 
     const [data, setData] = useState({
         'date' : '',

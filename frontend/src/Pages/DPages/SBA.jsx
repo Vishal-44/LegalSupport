@@ -1,10 +1,27 @@
-import React,{useState} from 'react'
+import React,{useEffect, useState} from 'react'
 import Header from '../../Components/Header'
 import { PDFDownloadLink } from '@react-pdf/renderer'
 import { SubleaseAgreement } from '../../Components/Templates'
+import { getUserDetails } from '../../utils/ApiServices'
+import { useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
 
 
 const SBA = () => {
+
+  const navigate = useNavigate()
+
+  useEffect(()=>{
+    const fechData = async () => {
+    const res = await getUserDetails()
+    if (!res.success){
+        console.log("log in required")
+        toast.warning("Log In or Register to generate documents.")
+        navigate('/')
+    }
+  }
+  fechData()
+},[])
 
     const [data, setData] = useState({
         'date' : '',

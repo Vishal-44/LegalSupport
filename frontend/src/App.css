@@ -96,6 +96,11 @@
   color: #dad7cd;
 }
 
+.f-img-container {
+  display: flex;
+  align-items: center;
+}
+
 .f-image {
   width: 25rem;
   height : auto;
@@ -279,22 +284,23 @@ padding-inline-start: 40px;
 }
 
 .choices-container > .question {
-  margin-top: 24px;
-  margin-bottom: 8px;
+  margin-top: 16px;
+  margin-bottom: 12px;
 } 
 
 .choices-container > input {
   outline: none;
-  width: 50%;
-  height: 18px;
-  margin-bottom: 16px;
-  border: 0;
-  border-bottom: 1px black solid;
+  width: 100%;
+  height: 32px;
+  margin-bottom: 4px;
+  border: 1px #3a5a40 solid;
+  padding-inline: 8px;
+  border-radius: 4px;
   margin-left: 16px;
 }
 
 
-.choices-container .download-pdf {
+ .download-pdf {
   padding : 8px;
   background-color: #3a5a40;
   color: white;
@@ -304,7 +310,7 @@ padding-inline-start: 40px;
 }
 
 .choices-container > input :focus{
-  border-bottom: 2px black solid;
+  border-bottom: 2px #3a5a40 solid;
 }
 
 .document-preview-container {
@@ -312,3 +318,92 @@ padding-inline-start: 40px;
   background-color: #ffffff;
   box-shadow: 24px 12px 36px 12px rgba(161,161,161,0.49);
 }
+
+
+.file-input {
+  max-width: 240px;
+  display: none;
+}
+
+.labelFile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 190px;
+  border: 2px dashed #ccc;
+  align-items: center;
+  text-align: center;
+  padding: 12px 5px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+
+.summarize-container {
+  background-color: #3a5a40;
+  padding : 80px 40px 40px 40px;
+  height : 620px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  overflow: hidden;
+}
+
+.upload-section {
+  color: #dad7cd;
+  height: 100%;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap : 24px;
+  justify-content: center;
+  align-items: center;
+}
+
+.summarize-btn {
+  font-family: "Open sans", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  width : 100%;
+  background-color : #ffffff;
+  color : #3a5a40;
+  padding: 8px;
+  border: 0;
+  border-radius: 4px;
+}
+
+.display-section {
+  border: 0px;
+  border-left: 2px #dad7cd solid;
+  height: auto;
+  padding: 40px;
+  overflow: auto;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap : 24px;
+  justify-content: center;
+  align-items: start;
+}
+
+.display-section > p {
+  width: 100%;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+  color: #dad7cd;
+}
+
+.headd {
+  color: #dad7cd;
+  font-family: "Playfair Display", serif;
+  font-weight: 900;
+  font-size: 48px;
+  width: 100%;
+  text-align: left;
+}
+
+/* #3a5a40
+#dad7cd
+#a3b18a */

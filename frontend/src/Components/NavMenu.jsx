@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { getUserDetails, logout } from '../utils/ApiServices';
 
 const NavMenu = () => {
-
   const navigate = useNavigate();
   const [userDetails, setUserDetails] = useState({status : false, username : ""});
 
