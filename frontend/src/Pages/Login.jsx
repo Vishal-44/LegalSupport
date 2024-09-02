@@ -25,6 +25,9 @@ const Login = () => {
         toast.error(res.message);
       }
     }
+    else{
+      toast.error(validateResult.message)
+    }
   }
 
   const handleCreateAccount = (e)=> {

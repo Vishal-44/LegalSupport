@@ -3,6 +3,7 @@ import InputField from '../Components/InputField'
 import { json, useNavigate } from 'react-router-dom'
 import { validateRegisterDetails } from '../utils/Validator'
 import { register } from '../utils/ApiServices'
+import { toast } from 'react-toastify'
 
 const Register = () => {
   
@@ -19,7 +20,16 @@ const Register = () => {
     if(validateResult.status)
     {
       const data = {name ,username ,password}
-      navigate('/')
+      const res = await register(data)
+      if (res.success){
+        navigate('/')
+      }
+      else {
+        toast.error(success.message)
+      }
+    }
+    else{
+      toast.error(validateResult.message)
     }
   }
 

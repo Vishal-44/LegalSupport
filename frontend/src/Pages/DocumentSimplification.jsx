@@ -24,24 +24,24 @@ const DocumentSimplification = () => {
     },[])
 
     const handleSummarize = async() => {
-        setLoading(true)
-        setText([])
         if (!file) {
             toast.warning("Please Upoad a PDF.")
             setLoading(false)
             return
         }
+        setLoading(true)
         const data = new FormData()
         data.append('file', file)
         const res = await summarize(data)
-        console.log(res)
         setLoading(false)
         if(!res.success){
-            setText(null)
             toast.error("Something went wrong.")
         }
         else {
-            setText(res.summary)
+            let newData = {...res}
+            delete newData.success
+            delete newData.message
+            setText(newData)
         }
     }
 
@@ -55,10 +55,18 @@ const DocumentSimplification = () => {
                 <button className='summarize-btn' onClick={handleSummarize}>Summarize</button>
             </div>
             <div className='display-section'>
-                {text && <h1 className='headd'>Summary</h1>}
-                {!text && <p style={{textAlign : 'center'}}>Summary will be displayed here.</p>}
+                
+                {text && <h6 className='headd'>Result</h6>}
                 {loading && <p>Please wait! We are summarizing document for you.</p>}
-                {text && text.map((point, index)=> (<p key = {index} className='summarized-text'>{index+1}. {point}</p>))}
+                {text && Object.entries(text).map(
+                    ([heading, points])=> (<div key = {heading}>
+                                            <p className='headd res'>
+                                                {heading}
+                                            </p>
+                                            {points.map(
+                                                (point, i) => (<p className='summarized-text' key = {i}>{i+1}. {point}</p>)
+                                            )}
+                                        </div>))}
                 
             </div>
 
