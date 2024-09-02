@@ -1,4 +1,4 @@
-<b>LegalDocGenerator</b>
+**LegalSupport**
 
 A MERN stack application for creating and summarizing legal documents.
 
