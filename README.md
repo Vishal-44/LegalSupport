@@ -31,8 +31,7 @@ A MERN stack application for creating and summarizing legal documents.
   1. **Clone Repository**:  https://github.com/Vishal-44/LegalSupport.git
   2. **Install dependencies for frontend** : cd LegalSupport/frontend and run npm i
   3. **Install dependencies for backend** : cd LegalSupport/Backend and run npm i
-  4. **config.env** : download config.env from given Google Drive link https://drive.google.com/file/d/1_1D-CPpZWLcRxj3Z_mHzG5pIi_ss1-5q/view?usp=drive_link  and paste it to config folder inside backend.
-  5. **Run project**: cd LegalSupport/frontend and run npm run dev to start frontend and then cd LegalSupport/Backend and run npm run dev to start backend using nodemon or cd LegalSupport/Backendend and run npm run start to start backend using node.
+  4. **Run project**: cd LegalSupport/frontend and run npm run dev to start frontend and then cd LegalSupport/Backend and run npm run dev to start backend using nodemon or cd LegalSupport/Backendend and run npm run start to start backend using node.
 
 
 **License:**
